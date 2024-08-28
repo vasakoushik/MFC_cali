@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFC California</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-wrapper">
+        <div class="overlay">
+            <div class="logo-title">
+                <img src="logo.png" alt="MFC California Logo">
+                <h1>MFC California</h1>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/mfccalifornia/?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank">
+                    <img src="ig.png" alt="Instagram Icon" class="instagram-icon">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="intro-text">
+                <p>MFC California is a vibrant soccer club rooted in California, committed to bringing together and enhancing the well-being of the Indo-American community through the love of the game. Established with the vision of blending cultural heritage with athletic passion, we create a space where tradition and sportsmanship thrive. Our club fosters a sense of unity and pride, offering a platform for players of all ages and skill levels to grow, compete, and excel. <strong>Scroll down to join the club!!!</strong></p>
+            </div>
+        </div>
+    </div>    
+
+    <script>
+        const images = ['mainscreen.jpg', 'bgp2.png','bgp3.jpg','bgp4.jpeg']; // Array of background images
+        const backgroundWrapper = document.querySelector('.background-wrapper');
+        let currentImageIndex = 0;
+
+        function shuffleBackground() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            backgroundWrapper.style.backgroundImage = `url(${images[currentImageIndex]})`;
+        }
+
+        // Shuffle background every 5 seconds
+        setInterval(shuffleBackground, 5000);
+
+        // Initial background image on page load
+        backgroundWrapper.style.backgroundImage = `url(${images[currentImageIndex]})`;
+    </script>
+    
+    <!-- New section for membership invitation -->
+    <section class="membership-section">
+        <div class="membership-content">
+            <h2>Join MFC California</h2>
+            <p>Become a member of our soccer community by clicking the button below and filling out the application form.</p>
+            <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSctslagFddKfKc0BHlkNllvEjx-zjdDuM1AaBLWItg76t06iw/viewform'">Join Now</button>
+        </div>
+    </section>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        const membershipSection = document.querySelector('.membership-section');
+    
+        document.addEventListener('wheel', function(event) {
+            if (event.deltaY > 0) {
+                // Scrolling down
+                membershipSection.scrollIntoView({ behavior: 'smooth' });
+            } else if (event.deltaY < 0) {
+                // Scrolling up
+                backgroundWrapper.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
